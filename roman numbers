@@ -1,0 +1,17 @@
+def romanToInt(rm_letter):
+    roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'IV':4,'IX':9,'XL':40,'XC':90,'CD':400,'CM':900}
+    i = 0
+    num = 0
+    while i < len(rm_letter):
+        if i+1<len(rm_letter) and rm_letter[i:i+2] in roman:
+            num+=roman[rm_letter[i:i+2]]
+            i+=2
+        else:
+
+            num+=roman[rm_letter[i]]
+            i+=1
+    return num
+
+roman = input("Enter roman letter: ").upper()
+roman=romanToInt(roman)
+print(roman)
